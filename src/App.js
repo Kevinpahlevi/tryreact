@@ -7,6 +7,8 @@ import Props from './Props.js'
 import Datamap from './Datamap.js'
 import Datax from './Datax.js'
 import Logo from './Logo.js'
+import ReactDOM from 'react-dom';
+
 
 const margin = {
   marginBottom : "30px",
@@ -60,89 +62,191 @@ class FormHandler extends Component{
   }
 }
 
-class Meme extends Component {
- constructor(){
-    super()
-    this.state = {
-        topText: "",
-        bottomText: "",
-        randomimg: "http://i.imgflip.com/1bij.jpg",
-        allMemeImgs: [],      
-    }
-    this.handlememe = this.handlememe.bind(this)
+// class Meme extends Component {
+//  constructor(){
+//     super()
+//     this.state = {
+//         topText: "",
+//         bottomText: "",
+//         randomimg: "http://i.imgflip.com/1bij.jpg",
+//         allMemeImgs: [],      
+//     }
+//     this.handlememe = this.handlememe.bind(this)
+//   }
+
+//   componentDidMount(){
+//     fetch("https://api.imgflip.com/get_memes")
+//           .then(response => response.json())
+//           .then(response =>{
+//             const {memes} = response.data
+//             this.setState({allMemeImgs: memes})
+//           })
+//           console.log(this.state.allMemeImgs)
+//   }
+  
+//   handlememe(event){
+//       const {name, value} = event.target
+//       this.setState({[name]: value})
+//   }
+
+//   handleimg(event){
+//       event.preventDefault()
+//       const randNum = Math.floor(Math.random()  * 10)
+//       const randImg = this.state.allMemeImgs[randNum].url
+//       this.setState({
+//             randomimg : randImg
+//       })
+//   }
+
+//   render(){
+//     return(
+//       <div>
+//         <span style={margin} class="badge">Meme Generator</span>
+
+//         <div class="form-group">
+//           <form onSubmit={this.handleimg} className="meme-form">
+//             <div class="col-sm-5">
+//                 <input 
+//                   type="text" 
+//                   placeholder="topText" 
+//                   name="topText" 
+//                   id="input" 
+//                   class="form-control"
+//                   value={this.state.topText}
+//                   onChange={this.handlememe}
+//                   title=""/>
+//               </div>
+//               <div class="col-sm-5">
+//                 <input 
+//                   type="text" 
+//                   placeholder="bottomText" 
+//                   name="bottomText" 
+//                   id="input" 
+//                   class="form-control" 
+//                   value={this.state.bottomText}
+//                   onChange={this.handlememe}
+//                   title=""/>
+//               </div>
+//               <div class="col-sm-2">
+//                 <button type="submit" class="btn btn-primary">Generate</button>
+//               </div>
+//             </form>
+//           </div>
+
+//         <br></br>
+//         {console.log(this.state.allMemeImgs[0].url)}
+//         <div className="meme">
+//           <img src={this.state.randomimg} alt="" />
+//           <h2 className="top">{this.state.topText}</h2>
+//           <h2 className="bottom">{this.state.bottomText}</h2>
+//         </div>
+//       </div>
+//     )
+//   }
+
+// }
+
+class Item extends Component{
+  componentWillMount(){
+    console.log("will mount")
+
   }
 
   componentDidMount(){
-    fetch("https://api.imgflip.com/get_memes")
-          .then(response => response.json())
-          .then(response =>{
-            const {memes} = response.data
-            this.setState({allMemeImgs: memes})
-          })
-          // console.log(this.state.allMemeImgs)
-  }
-  
-  handlememe(event){
-      const {name, value} = event.target
-      this.setState({[name]: value})
+    console.log("did mount")
+
   }
 
-  // handleimg(event){
-  //     event.preventDefault()
-  //     const randNum = Math.floor(Math.random()  * 10)
-  //     const randImg = this.state.allMemeImgs[randNum].url
-  //     this.setState({
-  //           randomimg : randImg
-  //     })
-  // }
+  componentWillUnmount(){
+    console.log("unmount")
 
+  }
   render(){
     return(
-      <div>
-        <span style={margin} class="badge">Meme Generator</span>
+    
+      <span class="badge">Badge success mount!</span>
+      
+    )
+  }
+ 
+}
 
-        <div class="form-group">
-          <form onSubmit={this.handleimg} className="meme-form">
-            <div class="col-sm-5">
-                <input 
-                  type="text" 
-                  placeholder="topText" 
-                  name="topText" 
-                  id="input" 
-                  class="form-control"
-                  value={this.state.topText}
-                  onChange={this.handlememe}
-                  title=""/>
-              </div>
-              <div class="col-sm-5">
-                <input 
-                  type="text" 
-                  placeholder="bottomText" 
-                  name="bottomText" 
-                  id="input" 
-                  class="form-control" 
-                  value={this.state.bottomText}
-                  onChange={this.handlememe}
-                  title=""/>
-              </div>
-              <div class="col-sm-2">
-                <button type="submit" class="btn btn-primary">Generate</button>
-              </div>
-            </form>
-          </div>
+// Component simply 
+const Itema = () => 
+<span class="badge">Badge A</span>
 
-        <br></br>
-        {console.log(this.state.allMemeImgs[0].url)}
-        <div className="meme">
-          <img src={this.state.randomimg} alt="" />
-          <h2 className="top">{this.state.topText}</h2>
-          <h2 className="bottom">{this.state.bottomText}</h2>
+
+
+class Life extends Component{
+  constructor(){
+    super()
+    this.setState = {
+
+    }
+  }
+    mount(){
+      ReactDOM.render(<Item />, document.getElementById('target'))
+    }
+    unmount(){
+      ReactDOM.unmountComponentAtNode(document.getElementById('target'))
+    }
+
+    mounta(){
+      ReactDOM.render(<Itema />, document.getElementById('targeta'))
+    }
+    unmounta(){
+      ReactDOM.unmountComponentAtNode(document.getElementById('targeta'))
+    }
+
+    render(){
+      return(
+        <div>
+        <button type="button" class="btn btn-primary" onClick={this.mount.bind(this)}>Mount Badge</button>
+        <button type="button" class="btn btn-info" onClick={this.unmount.bind(this)}>Unmount Badge</button>
+        <button type="button" class="btn btn-primary" onClick={this.mounta.bind(this)}>Mount Badge a</button>
+        <button type="button" class="btn btn-info" onClick={this.unmounta.bind(this)}>Unmount Badge a</button>
+        <div className="target" id="target"></div>
+        <div className="target" id="targeta"></div>
         </div>
-      </div>
+       
+      )
+    }
+  }
+
+class Updatecompo extends Component{
+  constructor() {
+    super()
+    this.state = {
+       increasing: true
+    }
+  }
+
+  update(){
+    ReactDOM.render(
+      <Updatecompo val={this.props.val+1}/>, document.getElementById('update')
     )
   }
 
+  componentWillReceiveProps(nextProps){
+      this.setState({
+        increasing: nextProps > this.props.val
+      })
+  }
+  shouldComponentUpdate(nextProps, nextState){
+    return nextProps % 3 === 0
+  }
+  render(){
+    return(
+      <div id="update">
+      {/* {console.log(this.state.increasing)} */}
+      <button type="button" class="btn btn-danger" onClick={this.update.bind(this)}>
+      {this.props.val}
+      </button>
+      </div>
+    )
+  }
 }
+Updatecompo.defaultProps = {val : 0}
 
 
 class App extends Component {
@@ -169,6 +273,7 @@ class App extends Component {
       })
     }, 3000)
   }
+
   event(){
     this.setState(prevState => {
       return{
@@ -176,11 +281,13 @@ class App extends Component {
       }
     })
   }
+
   tick() {
     this.setState({
       time: new Date()
     });
   }
+  
   render() {
     let logstate
     if (this.state.log === true) {
@@ -188,6 +295,7 @@ class App extends Component {
     }
     else
         logstate = "out"
+
     return (
       <div className="App">
        
@@ -224,7 +332,11 @@ class App extends Component {
           {this.state.count}
           <button onClick={this.event} type="button" class="btn btn-primary">Click Me</button>
           <FormHandler />
-          <Meme />
+          {/* <Meme /> */}
+          <h3>Mount Unmount</h3>
+          <Life />
+          <h3>Updatecompo with state</h3>
+          <Updatecompo />
           <br></br>           
           </div>
           
