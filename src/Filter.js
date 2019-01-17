@@ -5,40 +5,51 @@ class  Filter extends React.Component{
         super()
         this.state = {
             items : [],
-            itemx : []
+            itemx : [],
+            filter :""
         }
     }
+
     componentWillMount(){
         fetch('https://swapi.co/api/people/?format=json')
         .then(response => response.json())
         .then(({results: items})=>
               this.setState({items})  
         )
-
+        
         // fetch("https://api.imgflip.com/get_memes")
         // .then(response => response.json())
         // .then(response =>{
         //   const {memes} = response.data
-        //   this.setState({items: memes})
+        //   this.setState({itemx: memes})
         // })
     }
+
     filter(event){
         this.setState({filter: event.target.value})
     }
 
     render(){
         let items = this.state.items
+        console.log(items)
         if(this.state.filter){
-            items = items.filter(item => item.name.toLowerCase()
-            .include(this.state.filter.toLowerCase()))
+            items = items.filter( item => 
+            item.name.toLowerCase()
+            .includes(this.state.filter.toLowerCase()))
         }
+
         return(
             <div>
-                <input type="text" onChange={this.filter.bind(this)}/>
-                {items.map(item => <h4 key={item.name}>{item.name}</h4>)}
+                <input type="text" className="form-control" onChange={this.filter.bind(this)}/>
+                {items.map(item => <Org key={item.name} org={item}/>)}
             </div>
         )
+       
     }
+
 }
 
+const Org = (props) => <h4 >{props.org.name}</h4>
+
 export default Filter
+
