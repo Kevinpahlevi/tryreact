@@ -7,6 +7,7 @@ import Props from './Props.js'
 import Datamap from './Datamap.js'
 import Datax from './Datax.js'
 import Logo from './Logo.js'
+import Filter from './Filter'
 import ReactDOM from 'react-dom';
 
 
@@ -337,7 +338,8 @@ class App extends Component {
           <Life />
           <h3>Updatecompo with state</h3>
           <Updatecompo />
-          <br></br>           
+          <br></br>
+          <Filter />           
           </div>
           
       </div>
