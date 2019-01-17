@@ -52,7 +52,7 @@ class FormHandler extends Component{
         <form action="" method="POST" role="form">
       
           <div class="form-group">
-            <label for="">Form Handler</label>
+            <label for="">Form Handlers</label>
             <input type="text" class="form-control" name="namevalue" id="" placeholder="Input field" onChange={this.formchange} />
             your name is : {this.state.namevalue}
           </div>
