@@ -8,6 +8,9 @@ import Datamap from './Datamap.js'
 import Datax from './Datax.js'
 import Logo from './Logo.js'
 import Filter from './Filter'
+import Compiler from './Compiler'
+import Highorder from './Highorder'
+
 import ReactDOM from 'react-dom';
 
 
@@ -339,7 +342,12 @@ class App extends Component {
           <h3>Updatecompo with state</h3>
           <Updatecompo />
           <br></br>
-          <Filter />           
+          <Filter />
+          <br></br>
+          <h3>High order</h3>
+          <Highorder />
+          <h3>Compiler JSX with Babel</h3>
+          <Compiler />             
           </div>
           
       </div>

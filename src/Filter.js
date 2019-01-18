@@ -31,7 +31,7 @@ class  Filter extends React.Component{
 
     render(){
         let items = this.state.items
-        console.log(items)
+        // console.log(items)
         if(this.state.filter){
             items = items.filter( item => 
             item.name.toLowerCase()
