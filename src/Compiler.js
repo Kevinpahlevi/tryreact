@@ -29,8 +29,7 @@ class Compiler extends React.Component{
             <div>
                 <div style={{width: '500px'}} className="container">
                 <pre style=
-                {this.state.err === 'success'||'no error' ? {backgroundColor: '99ff99' }:{backgroundColor: 'ff8080'
-                }}>{this.state.err}</pre>
+                {this.state.err === 'success'||this.state.err === 'no error' ? {backgroundColor: "#99ff99" }:{backgroundColor: "#ff8080"}}>{this.state.err}</pre>
                 <textarea className="form-control"onChange={this.update.bind(this)} 
                 placeholder='input jsx here'></textarea>
                 <pre >{this.state.output}</pre>
