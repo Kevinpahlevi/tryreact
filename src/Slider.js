@@ -11,7 +11,7 @@ class Slider extends React.Component{
     }
 
     update(e){
-        red :ReactDOM.findDOMNode(this.refs.red.refs.inp).value
+        // red :ReactDOM.findDOMNode(this.refs.red.refs.inp).value
     }
 
     render(){

@@ -11,7 +11,7 @@ import Filter from './Filter'
 import Compiler from './Compiler'
 import Slider from './Slider'
 import Highorder from './Highorder'
-
+import Mobtry from './Mobtry'
 import ReactDOM from 'react-dom';
 
 
@@ -349,7 +349,8 @@ class App extends Component {
           <Highorder />
           <h3>Compiler JSX with Babel</h3>
           <Compiler />  
-          <Slider />           
+          <Slider />
+          <Mobtry />           
           </div>
           
       </div>
