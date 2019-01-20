@@ -9,6 +9,7 @@ import Datax from './Datax.js'
 import Logo from './Logo.js'
 import Filter from './Filter'
 import Compiler from './Compiler'
+import Slider from './Slider'
 import Highorder from './Highorder'
 
 import ReactDOM from 'react-dom';
@@ -347,7 +348,8 @@ class App extends Component {
           <h3>High order</h3>
           <Highorder />
           <h3>Compiler JSX with Babel</h3>
-          <Compiler />             
+          <Compiler />  
+          <Slider />           
           </div>
           
       </div>
