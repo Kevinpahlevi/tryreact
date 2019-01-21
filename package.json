@@ -5,6 +5,7 @@
   "dependencies": {
     "mobx": "^5.8.0",
     "mobx-react": "^5.4.3",
+    "prop-types": "^15.6.2",
     "react": "^16.7.0",
     "react-bootstrap": "^0.32.4",
     "react-dom": "^16.7.0",
@@ -26,6 +27,15 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "@babel/plugin-proposal-decorators": "^7.2.3",
     "ws": "3.3.2"
+  },
+  "babel": {
+    "plugins": [
+      "@babel/plugin-proposal-decorators"
+    ],
+    "presets": [
+      "react-app"
+    ]
   }
 }

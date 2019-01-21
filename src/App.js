@@ -12,6 +12,7 @@ import Compiler from './Compiler'
 import Slider from './Slider'
 import Highorder from './Highorder'
 import Mobtry from './Mobtry'
+import MobEgg from './MobEgg'
 import ReactDOM from 'react-dom';
 
 
@@ -350,7 +351,9 @@ class App extends Component {
           <h3>Compiler JSX with Babel</h3>
           <Compiler />  
           <Slider />
-          <Mobtry />           
+          <Mobtry />
+          <h3>MobxEggheads</h3>  
+          <MobEgg />         
           </div>
           
       </div>
