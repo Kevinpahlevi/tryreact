@@ -160,7 +160,7 @@ class Item extends Component{
   }
 
   componentDidMount(){
-    console.log("did mount")
+    console.log("did mounwt")
 
   }
 
