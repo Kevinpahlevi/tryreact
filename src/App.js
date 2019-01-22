@@ -12,7 +12,8 @@ import Compiler from './Compiler'
 import Slider from './Slider'
 import Highorder from './Highorder'
 import Mobtry from './Mobtry'
-import MobEgg from './MobEgg'
+import Todolist from './TodoList'
+import store from './TodoStore'
 import ReactDOM from 'react-dom';
 
 
@@ -352,10 +353,9 @@ class App extends Component {
           <Compiler />  
           <Slider />
           <Mobtry />
-          <h3>MobxEggheads</h3>  
-          <MobEgg />         
+          <h3>MobxEggheads</h3>
+          <Todolist store={store}/> 
           </div>
-          
       </div>
     );
   }
