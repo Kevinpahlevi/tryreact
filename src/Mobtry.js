@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { decorate, observable, configure, action, computed } from "mobx"
 import { observer } from "mobx-react"
+import DevTools from 'mobx-react-devtools'
 
 configure({ enforceActions: true })
 
@@ -115,6 +116,7 @@ class Mobtry extends Component {
     return (
       <div>
         <h1>Mobx Table</h1>
+        <DevTools />
         <Controls store={appStore} />
         <Table store={appStore} />
       </div>
