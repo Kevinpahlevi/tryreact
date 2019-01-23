@@ -16,12 +16,17 @@ class TodoStore{
     createtodo(e){
         this.todos.push(e)
     }
+    clear(){
+        console.log(',,,,')
+        // this.todos
+    }
 }
 decorate(TodoStore, {
     todos: observable,
     filter: observable,
     isifilter: action,
-    createtodo: action
+    createtodo: action,
+    clear: action
 })
 
 var store = new TodoStore

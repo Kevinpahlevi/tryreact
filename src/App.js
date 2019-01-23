@@ -15,6 +15,7 @@ import Mobtry from './Mobtry'
 import Todolist from './TodoList'
 import store from './TodoStore'
 import ReactDOM from 'react-dom';
+import {Mobegg, appState} from './MobEgg';
 
 
 const margin = {
@@ -354,6 +355,8 @@ class App extends Component {
           <Slider />
           <Mobtry />
           <h3>MobxEggheads</h3>
+           
+          {/* <Mobegg store={appState}/> */}
           <Todolist store={store}/> 
           </div>
       </div>

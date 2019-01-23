@@ -14,22 +14,22 @@ appState.decrement = function(){
 }
 
 
-class MobEgg extends React.Component{
-render(){
-    return(
-        <div>
-            Counter: {this.props.store.count}
-            <button className="btn" onClick={this.handleInc.bind(this)}>+</button>
-            <button  className="btn" onClick={this.handleDec.bind(this)}>-</button>
-        </div>
-    )
-}
-handleInc = () =>{
-    this.props.store.increment()
-}
-handleDec = () => {
-    this.props.store.decrement()
-}
-}
-export default observer(MobEgg)
-// ReactDOM.render(<MobEgg store={appState}/>, document.getElementById('root'))
+const Mobegg = observer(class MobEgg extends React.Component{
+    render(){
+        return(
+            <div>
+                Counter: {this.props.store.count}
+                <button className="btn" onClick={this.handleInc.bind(this)}>+</button>
+                <button  className="btn" onClick={this.handleDec.bind(this)}>-</button>
+            </div>
+        )
+    }
+    handleInc = () =>{
+        this.props.store.increment()
+    }
+    handleDec = () => {
+        this.props.store.decrement()
+    }
+})
+export default Mobegg
+
