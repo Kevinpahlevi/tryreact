@@ -36,8 +36,8 @@ const Timer = observer(class TodoList extends React.Component{
                
                 {todosli}
                 {/* <button onClick={clear} className="btn btn-primary">Clear data</button> */}
-                <br></br>
-                <h3>={kali}=</h3>
+                <span class="badge">Hasil Computed = {kali}</span>
+                
                 {/* {this.props.store.filter}<br></br>
                 <button className="btn btn-primary" onClick={this.isi} value={34442}> test</button>
                 <button className="btn btn-primary" onClick={this.isi} value={23442}> test</button>

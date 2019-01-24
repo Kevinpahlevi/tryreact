@@ -17,7 +17,7 @@ import store from './TodoStore'
 import ReactDOM from 'react-dom';
 import {Mobegg, appState} from './MobEgg';
 
-
+const Logbutton = (props) => {return(<button className="btn btn-warning" onClick={props.logstate}>{props.kondisi?'logout':'login'}</button>)}
 const margin = {
   marginBottom : "30px",
   marginTop : "30px"
@@ -265,7 +265,8 @@ class App extends Component {
       log : true,
       count : 0,
       loading : true,
-      time : new Date()
+      time : new Date(),
+      angka: 0
     }
     this.event = this.event.bind(this)
   }
@@ -281,7 +282,9 @@ class App extends Component {
       })
     }, 3000)
   }
-
+  componentDidUpdate(){
+    // console.log('get update')
+  }
   event(){
     this.setState(prevState => {
       return{
@@ -292,10 +295,15 @@ class App extends Component {
 
   tick() {
     this.setState({
-      time: new Date()
+      time: new Date(),
+      angka: this.state.angka + 1
     });
   }
-  
+  logstate() {
+    this.setState({
+      log: !this.state.log
+    })
+  }
   render() {
     let logstate
     if (this.state.log === true) {
@@ -312,6 +320,7 @@ class App extends Component {
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
+          <h3>=== {this.state.angka} s ===</h3>
           <a
             className="App-link"
             href="https://reactjs.org"
@@ -336,6 +345,7 @@ class App extends Component {
           <h3>State</h3>
           {this.state.kondisi}
           <h4> current condition : log{logstate} </h4>
+          <Logbutton kondisi={this.state.log} logstate={this.logstate.bind(this)}/>
           <h3>Event Handling</h3>
           {this.state.count}
           <button onClick={this.event} type="button" class="btn btn-primary">Click Me</button>
