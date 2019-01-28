@@ -157,7 +157,7 @@ class FormHandler extends Component{
 
 class Item extends Component{
   componentWillMount(){
-    console.log("will mount")
+    console.log("will mounwt")
 
   }
 
