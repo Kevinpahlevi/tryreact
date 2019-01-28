@@ -15,6 +15,7 @@ import Mobtry from './Mobtry'
 import Todolist from './TodoList'
 import store from './TodoStore'
 import ReactDOM from 'react-dom';
+import Suhu from './Suhu'
 import {Mobegg, appState} from './MobEgg';
 
 const Logbutton = (props) => {return(<button className="btn btn-warning" onClick={props.logstate}>{props.kondisi?'logout':'login'}</button>)}
@@ -368,6 +369,7 @@ class App extends Component {
            
           {/* <Mobegg store={appState}/> */}
           <Todolist store={store}/> 
+          <Suhu />
           </div>
       </div>
     );

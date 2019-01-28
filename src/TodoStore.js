@@ -36,6 +36,6 @@ decorate(TodoStore, {
     nilai2: observable,
     kali: computed
 })
-
+const cobak = () => {return(<h1>yes</h1>)}
 var store = new TodoStore
-export default store
+export default store 
