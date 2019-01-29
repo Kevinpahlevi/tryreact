@@ -16,14 +16,10 @@ import Todolist from './TodoList'
 import store from './TodoStore'
 import ReactDOM from 'react-dom';
 import Suhu from './Suhu'
+import Meme from './Meme'
 import {Mobegg, appState} from './MobEgg';
 
 const Logbutton = (props) => {return(<button className="btn btn-warning" onClick={props.logstate}>{props.kondisi?'logout':'login'}</button>)}
-const margin = {
-  marginBottom : "30px",
-  marginTop : "30px"
-
-}
 const dataout = Datax.map(x => <Datamap id={x.id} text={x.text}/>)
 
 class TryCom extends Component{
@@ -71,89 +67,7 @@ class FormHandler extends Component{
   }
 }
 
-// class Meme extends Component {
-//  constructor(){
-//     super()
-//     this.state = {
-//         topText: "",
-//         bottomText: "",
-//         randomimg: "http://i.imgflip.com/1bij.jpg",
-//         allMemeImgs: [],      
-//     }
-//     this.handlememe = this.handlememe.bind(this)
-//   }
 
-//   componentDidMount(){
-//     fetch("https://api.imgflip.com/get_memes")
-//           .then(response => response.json())
-//           .then(response =>{
-//             const {memes} = response.data
-//             this.setState({allMemeImgs: memes})
-//           })
-//           console.log(this.state.allMemeImgs)
-//   }
-  
-//   handlememe(event){
-//       const {name, value} = event.target
-//       this.setState({[name]: value})
-//   }
-
-//   handleimg(event){
-//       event.preventDefault()
-//       const randNum = Math.floor(Math.random()  * 10)
-//       const randImg = this.state.allMemeImgs[randNum].url
-//       this.setState({
-//             randomimg : randImg
-//       })
-//   }
-
-//   render(){
-//     return(
-//       <div>
-//         <span style={margin} class="badge">Meme Generator</span>
-
-//         <div class="form-group">
-//           <form onSubmit={this.handleimg} className="meme-form">
-//             <div class="col-sm-5">
-//                 <input 
-//                   type="text" 
-//                   placeholder="topText" 
-//                   name="topText" 
-//                   id="input" 
-//                   class="form-control"
-//                   value={this.state.topText}
-//                   onChange={this.handlememe}
-//                   title=""/>
-//               </div>
-//               <div class="col-sm-5">
-//                 <input 
-//                   type="text" 
-//                   placeholder="bottomText" 
-//                   name="bottomText" 
-//                   id="input" 
-//                   class="form-control" 
-//                   value={this.state.bottomText}
-//                   onChange={this.handlememe}
-//                   title=""/>
-//               </div>
-//               <div class="col-sm-2">
-//                 <button type="submit" class="btn btn-primary">Generate</button>
-//               </div>
-//             </form>
-//           </div>
-
-//         <br></br>
-//         {console.log(this.state.allMemeImgs[0].url)}
-//         <div className="meme">
-//           <img src={this.state.randomimg} alt="" />
-//           <h2 className="top">{this.state.topText}</h2>
-//           <h2 className="bottom">{this.state.bottomText}</h2>
-//         </div>
-//       </div>
-//     )
-//   }
-
-// }
 
 class Item extends Component{
   componentWillMount(){
@@ -276,7 +190,7 @@ class App extends Component {
   }
  
   componentDidMount(){
-    this.timerID = setInterval(() => this.tick(), 1000);
+    // this.timerID = setInterval(() => this.tick(), 1000);
     setTimeout(() => {
       this.setState({
         loading : false
@@ -351,7 +265,7 @@ class App extends Component {
           {this.state.count}
           <button onClick={this.event} type="button" class="btn btn-primary">Click Me</button>
           <FormHandler />
-          {/* <Meme /> */}
+          <Meme />
           <h3>Mount Unmount</h3>
           <Life />
           <h3>Updatecompo with state</h3>

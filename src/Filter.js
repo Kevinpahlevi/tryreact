@@ -37,7 +37,6 @@ class  Filter extends React.Component{
             item.name.toLowerCase()
             .includes(this.state.filter.toLowerCase()))
         }
-
         return(
             <div>
                 <input type="text" className="form-control" onChange={this.filter.bind(this)}/>
