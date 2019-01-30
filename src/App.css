@@ -30,6 +30,11 @@
   margin-bottom: 10px;
 }
 
+.weather__key {
+  font-size: 20px;
+  color: whitesmoke;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

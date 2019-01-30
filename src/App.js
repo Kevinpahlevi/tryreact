@@ -17,6 +17,8 @@ import store from './TodoStore'
 import ReactDOM from 'react-dom';
 import Suhu from './Suhu'
 import Meme from './Meme'
+import Weathers from './Weathers'
+import Reactboots from './Reactboots'
 import {Mobegg, appState} from './MobEgg';
 
 const Logbutton = (props) => {return(<button className="btn btn-warning" onClick={props.logstate}>{props.kondisi?'logout':'login'}</button>)}
@@ -284,6 +286,8 @@ class App extends Component {
           {/* <Mobegg store={appState}/> */}
           <Todolist store={store}/> 
           <Suhu />
+          <Weathers />
+          {/* <Reactboots /> */}
           </div>
       </div>
     );

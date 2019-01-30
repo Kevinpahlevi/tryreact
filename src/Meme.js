@@ -1,53 +1,62 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+const imgmeme = {
+ width: '550px',
+ height: '350px'
+}
 
+const top = {
+  position: 'absolute',
+  top: '1%',
+  left: '15%',
+  fontSize: '35px',
+  textShadow: '-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black'
+}
+
+const bottom = {
+  position: 'absolute',
+  bottom: '1%',
+  left: '15%',
+  fontSize: '35px',
+  textShadow: '-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black'
+}
+
+const contimg = {
+  position: 'relative',
+  textAlign: 'center',
+  color: 'white'
+
+}
 export default class Meme extends React.Component {
 
     constructor(){
     super()
     this.state = {
-        topText: "",
-        bottomText: "",
+        topText: "ONE DOES NOT SIMPLY",
+        bottomText: "PAUSE AN ONLINE GAME",
         randomimg: "http://i.imgflip.com/1bij.jpg",
-        allMemeImgs: [],
-        myObj : {
-            "name":"John",
-            "age":30,
-            "cars": [
-              {"name":"Ford", "models":["Fiesta", "Focus", "Mustang"]},
-              {"name":"BMW", "models":["320", "X3", "X5"]},
-              {"name":"Fiat", "models":["500", "Panda"] }
-            ]
-          }      
+        allMemeImgs: []    
     }
     
     this.handlememe = this.handlememe.bind(this)
-  }
+    this.handleimg = this.handleimg.bind(this)
 
- componentDidMount(){
-     console.log('did meme')
-    fetch("https://api.imgflip.com/get_memes")
-    .then(response => response.json())
-    .then(response =>{
-        if (response.data) {
-          const {memes} = response.data
-          this.setState({allMemeImgs: memes})
-        }  
-    })
- }
+  }
 
   handlememe(event){
       const {name, value} = event.target
       this.setState({[name]: value})
   }
 
-  handleimg(event){
-    //   event.preventDefault()
-    //   const randNum = Math.floor(Math.random()  * 10)
-    //   const randImg = this.state.allMemeImgs[randNum].url
-    //   this.setState({
-    //         randomimg : randImg
-    //   })
+  async handleimg(event){
+    event.preventDefault()
+    const awal = await fetch("https://api.imgflip.com/get_memes")
+    const next = await awal.json()
+    const randNum = Math.floor(Math.random()  * 99) + 1
+    const randImg = next.data.memes[randNum].url
+    if(randImg){
+      this.setState({randomimg: randImg});
+    }
   }
 
   render(){
@@ -67,7 +76,7 @@ export default class Meme extends React.Component {
                   name="topText" 
                   id="input" 
                   class="form-control"
-                  value={this.state.topText}
+                  // value={this.state.topText}
                   onChange={this.handlememe}
                   title=""/>
               </div>
@@ -78,7 +87,7 @@ export default class Meme extends React.Component {
                   name="bottomText" 
                   id="input" 
                   class="form-control" 
-                  value={this.state.bottomText}
+                  // value={this.state.bottomText}
                   onChange={this.handlememe}
                   title=""/>
               </div>
@@ -87,11 +96,11 @@ export default class Meme extends React.Component {
               </div>
             </form>
           </div>
-
-        <div className="meme">
-          <img src={this.state.randomimg} alt="" />
-          <h2 className="top">{this.state.topText}</h2>
-          <h2 className="bottom">{this.state.bottomText}</h2>
+        <br></br>
+        <div className="meme" style={contimg}>
+          <p style={top} className="top" autocomplete="off">{this.state.topText}</p>
+          <p style={bottom} className="bottom" autocomplete="off">{this.state.bottomText}</p>
+          <img style={imgmeme} src={this.state.randomimg} alt="" />        
         </div>
       </div>
     )
