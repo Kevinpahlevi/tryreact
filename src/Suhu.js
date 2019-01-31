@@ -20,7 +20,7 @@ class Suhu extends React.Component{
             nilaiAkhir: 0
 
         }
-    }
+     }
     setDerajatAwal(){
     var e = document.getElementById("awal")
     var a = e.options[e.selectedIndex].value

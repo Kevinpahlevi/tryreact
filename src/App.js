@@ -20,6 +20,7 @@ import Meme from './Meme'
 import Weathers from './Weathers'
 import Reactboots from './Reactboots'
 import {Mobegg, appState} from './MobEgg';
+import { Router, Route, Link } from "react-router-dom";
 
 const Logbutton = (props) => {return(<button className="btn btn-warning" onClick={props.logstate}>{props.kondisi?'logout':'login'}</button>)}
 const dataout = Datax.map(x => <Datamap id={x.id} text={x.text}/>)
@@ -282,11 +283,10 @@ class App extends Component {
           <Slider />
           <Mobtry />
           <h3>MobxEggheads</h3>
-           
           {/* <Mobegg store={appState}/> */}
-          <Todolist store={store}/> 
+          {/* <Todolist store={store}/> 
           <Suhu />
-          <Weathers />
+          <Weathers /> */}
           {/* <Reactboots /> */}
           </div>
       </div>
